@@ -164,7 +164,9 @@ section.footer > a {
 	width: 100vw;
 	height: 10vh;
 	position: relative;
-	z-index: 99; }
+	z-index: 99;
+	cursor: none;
+	pointer-events: none; }
 
 .header-before { background: linear-gradient(#262018 50%, transparent); }
 .footer-after { background: linear-gradient(transparent, #262018 50%); }
@@ -201,6 +203,9 @@ section.footer > a {
 
 	.display {
 		width: 70%; }
+
+	section.footer {
+		margin-bottom: -5vh; }
 }
 
 /* responsive/ portrait */

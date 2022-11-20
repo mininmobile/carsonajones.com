@@ -79,7 +79,7 @@ section.main {
 .display {
 	width: 60%;
 	padding: 0 6rem;
-	margin: 3rem auto;
+	margin: -3rem auto 3rem;
 }
 
 .display a {
@@ -136,6 +136,7 @@ section.main {
 /* footer */
 
 section.footer {
+	min-height: 66vh;
 	margin-bottom: -10vh;
 	font-size: 1.5rem;
 	font-family: "Martel", "Times New Roman", Times, serif;

@@ -38,9 +38,10 @@ h3 { font-size: 2rem; }
 a {
 	color: #f7ba10;
 	text-decoration: none;
-	transition: text-shadow .3s; }
+	transition: color .3s, text-shadow .3s; }
 
 a:hover, a:focus, a:active {
+	color: #f6c84a;
 	text-shadow: 0 0 .5rem #755706; }
 
 .header {
@@ -52,12 +53,12 @@ a:hover, a:focus, a:active {
 
 section {
 	min-height: 50vh;
-	padding: 1rem 6rem; }
+	padding: 1rem 2rem; }
 
 /* main section */
 
 section.main {
-	margin-top: -7.5vh;
+	margin-top: -10vh;
 	min-height: 66vh;
 	display: flex;
 	justify-content: center;
@@ -82,7 +83,7 @@ section.main {
 }
 
 .display a {
-	margin: 3rem 0;
+	margin: 5rem 0;
 	color: currentColor;
 	display: block;
 	background: center / cover;
@@ -93,11 +94,11 @@ section.main {
 
 .display a:hover, .display a:focus, .display a:active {
 	border: 1px solid #fff2c8;
-	text-shadow: 0 0 .5rem #1a1814;
+	text-shadow: 0 0 .75rem #1a1814;
 	box-shadow: 0rem .3rem 2rem rgba(0, 0, 0, .6); }
 
 .display a .wrap {
-	padding: 3rem 5rem;
+	padding: 5rem 5rem 4rem;
 	border-radius: 1rem;
 	background-color: rgba(0, 0, 0, 0.5);
 	transition: background-color .3s; }
@@ -110,7 +111,7 @@ section.main {
 	color: #fff2c8; }
 
 .display .info {
-	margin-top: .5rem;
+	margin-top: 3rem;
 	font-size: 1rem;
 	display: flex;
 	justify-content: flex-end;
@@ -135,7 +136,7 @@ section.main {
 /* footer */
 
 section.footer {
-	margin-bottom: -7.5vh;
+	margin-bottom: -10vh;
 	font-size: 1.5rem;
 	font-family: "Martel", "Times New Roman", Times, serif;
 	display: flex;
@@ -144,7 +145,8 @@ section.footer {
 	align-items: center; }
 
 section.footer .divider {
-	opacity: .5; }
+	opacity: .5;
+	user-select: none; }
 
 section.footer > a {
 	text-decoration: none; }
@@ -160,12 +162,12 @@ section.footer > a {
 
 .header-before, .footer-after {
 	width: 100vw;
-	height: 7.5vh;
+	height: 10vh;
 	position: relative;
 	z-index: 99; }
 
-.header-before { background: linear-gradient(#262018 33%, transparent); }
-.footer-after { background: linear-gradient(transparent, #262018 66%); }
+.header-before { background: linear-gradient(#262018 50%, transparent); }
+.footer-after { background: linear-gradient(transparent, #262018 50%); }
 
 /* open animation */
 
@@ -189,4 +191,32 @@ section.footer > a {
 	to {
 		opacity: 1;
 		top: 0; }
+}
+
+/* responsive/ 4:3 */
+
+@media (max-aspect-ratio: 4/3) {
+	.about {
+		width: 50%; }
+
+	.display {
+		width: 70%; }
+}
+
+/* responsive/ portrait */
+
+@media (orientation: portrait) {
+	body, section.footer {
+		font-size: 1.1rem; }
+
+	.about {
+		width: 90%;
+		font-size: 1.25rem; }
+
+	.display {
+		width: unset;
+		padding: 0; }
+
+	.display a .wrap {
+		padding: 5rem 2.5rem 4rem; }
 }

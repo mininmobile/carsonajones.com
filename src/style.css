@@ -1,35 +1,192 @@
 body {
 	margin: 0;
 	min-height: 100vh;
-	background: #ddd;
-	color: #111;
+	background: #262018;
+	color: #fff2c8;
 	font-size: 1.2rem;
-	font-family: "Lato", Helvetica, Arial, sans-serif;
-	display: flex;
-	align-items: center;
-}
+	font-family: "Lato", Helvetica, Arial, sans-serif; }
+
+body::before, body::after {
+	content: "";
+	width: 100vw;
+	height: 5vh;
+	display: block;
+	position: fixed;
+	z-index: 9;
+	left: 0;
+	cursor: none;
+	pointer-events: none; }
+
+body::before {
+	background: linear-gradient(#1d1913, transparent);
+	top: 0; }
+
+body::after {
+	background: linear-gradient(transparent, #1d1913);
+	bottom: 0; }
 
 h1, h2, h3 {
-	font-family: "Patua One", "Times New Roman", Times, serif; }
+	pointer-events: none;
+	font-family: "Martel", "Times New Roman", Times, serif; }
+
+h2, h3 { color: #f7ba10; }
 
 h1 { font-size: 4rem; }
 h2 { font-size: 3rem; }
 h3 { font-size: 2rem; }
 
-.wrapper {
-	width: 100vw;
-	margin-bottom: 5rem;
-}
+a {
+	color: #f7ba10;
+	text-decoration: none;
+	transition: text-shadow .3s; }
+
+a:hover, a:focus, a:active {
+	text-shadow: 0 0 .5rem #755706; }
 
 .header {
 	text-align: center;
-	margin: 8rem 1rem;
-}
+	margin: 8rem 1rem 1rem; }
 
 .header.sub {
-	margin: -7rem 1rem 8rem;
+	margin: -1rem auto 1rem; }
+
+section {
+	min-height: 50vh;
+	padding: 1rem 6rem; }
+
+/* main section */
+
+section.main {
+	margin-top: -7.5vh;
+	min-height: 66vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column; }
+
+/* about section  */
+
+.about {
+	width: 30%;
+	margin: 1rem auto;
+	padding: 0 1rem;
+	font-size: 1.33rem;
+	text-align: center; }
+
+/* display */
+
+.display {
+	width: 60%;
+	padding: 0 6rem;
+	margin: 3rem auto;
 }
 
-.section {
-	margin: 3rem 6rem;
+.display a {
+	margin: 3rem 0;
+	color: currentColor;
+	display: block;
+	background: center / cover;
+	border: 1px solid #89826b;
+	border-radius: 1rem;
+	box-shadow: 0rem .3rem 2rem rgba(0, 0, 0, .2);
+	transition: text-shadow .3s, box-shadow .3s, border .3s; }
+
+.display a:hover, .display a:focus, .display a:active {
+	border: 1px solid #fff2c8;
+	text-shadow: 0 0 .5rem #1a1814;
+	box-shadow: 0rem .3rem 2rem rgba(0, 0, 0, .6); }
+
+.display a .wrap {
+	padding: 3rem 5rem;
+	border-radius: 1rem;
+	background-color: rgba(0, 0, 0, 0.5);
+	transition: background-color .3s; }
+
+.display a:hover .wrap, .display a:focus .wrap, .display a:active .wrap {
+	background-color: rgba(0, 0, 0, .25); }
+
+.display h3, .display p, .display .info {
+	margin: 0;
+	color: #fff2c8; }
+
+.display .info {
+	margin-top: .5rem;
+	font-size: 1rem;
+	display: flex;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+	gap: 1rem; }
+
+.display .info p {
+	padding: .2rem .4rem;
+	background: #755706;
+	border-radius: .3rem;
+	transition: background .3s; }
+
+.display a:hover .info p, .display a:focus .info p, .display a:active .info p {
+	background: #e1a90f; }
+
+.display .ratcatcher { background-image: url("img/lanham.png"); }
+.display .sandersons { background-image: url("img/sandersons.png"); }
+.display .phone-call { background-image: url("img/phone-call.png"); }
+.display .long-road { background-image: url("img/long-road.png"); }
+.display .legendkeeper { background-image: url("img/legendkeeper.png"); }
+
+/* footer */
+
+section.footer {
+	margin-bottom: -7.5vh;
+	font-size: 1.5rem;
+	font-family: "Martel", "Times New Roman", Times, serif;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center; }
+
+section.footer .divider {
+	opacity: .5; }
+
+section.footer > a {
+	text-decoration: none; }
+
+/* misc */
+
+.center { text-align: center; }
+
+.hidden {
+	opacity: 0;
+	pointer-events: none;
+	cursor: default; }
+
+.header-before, .footer-after {
+	width: 100vw;
+	height: 7.5vh;
+	position: relative;
+	z-index: 99; }
+
+.header-before { background: linear-gradient(#262018 33%, transparent); }
+.footer-after { background: linear-gradient(transparent, #262018 66%); }
+
+/* open animation */
+
+.animated {
+	opacity: 0;
+	position: relative;
+	top: 75vw;
+	animation: in .9s ease-out forwards; }
+
+.second { animation-delay: .05s; }
+.third  { animation-delay: .2s; }
+.fourth { animation-delay: .35s; }
+.fifth  { animation-delay: .5s; }
+.sixth  { animation-delay: .65s; }
+
+@keyframes in {
+	from {
+		opacity: 0;
+		top: 50vw; }
+
+	to {
+		opacity: 1;
+		top: 0; }
 }

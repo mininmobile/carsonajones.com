@@ -1,10 +1,14 @@
 body {
 	margin: 0;
 	min-height: 100vh;
-	background: #262018;
+	background-color: #262018;
+	background-image: url("data:image/svg+xml,%3Csvg width='76' height='18' viewBox='0 0 76 18' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M32 18c-2.43-1.824-4-4.73-4-8 0-4.418-3.582-8-8-8H0V0h20c5.523 0 10 4.477 10 10 0 4.418 3.582 8 8 8h20c4.418 0 8-3.582 8-8 0-5.523 4.477-10 10-10v2c-4.418 0-8 3.582-8 8 0 3.27-1.57 6.176-4 8H32zM64 0c-1.67 1.256-3.748 2-6 2H38c-2.252 0-4.33-.744-6-2h32z' fill='%2337281d' fill-opacity='0.25' fill-rule='evenodd'/%3E%3C/svg%3E");
+	background-size: 10em;
+	background-position: center;
 	color: #fff2c8;
 	font-size: 1.2rem;
-	font-family: "Lato", Helvetica, Arial, sans-serif; }
+	font-family: "Lato", Helvetica, Arial, sans-serif;
+	overflow-x: hidden; }
 
 body::before, body::after {
 	content: "";
@@ -26,6 +30,7 @@ body::after {
 	bottom: 0; }
 
 h1, h2, h3 {
+	text-shadow: 0 0 1rem #1a1814;
 	pointer-events: none;
 	font-family: "Martel", "Times New Roman", Times, serif; }
 
@@ -65,14 +70,36 @@ section.main {
 	align-items: center;
 	flex-direction: column; }
 
+section.main span {
+	position: relative;
+	z-index: 99;
+	text-shadow: 0 0 1rem#1a1814;
+	right: 15%; }
+
+.headshot {
+	position: absolute;
+	bottom: -5%;
+	right: 10%; }
+
+.headshot .img {
+	background: url("img/headshot.png") center / cover no-repeat;
+	width: 40vw;
+	max-width: 600px;
+	border: .5rem solid #3590e8;
+	border-radius: 3rem;
+	filter: brightness(90%); }
+
 /* about section  */
 
 .about {
-	width: 30%;
+	width: 35%;
 	margin: 1rem auto;
-	padding: 0 1rem;
-	font-size: 1.33rem;
-	text-align: center; }
+	padding: 7rem 5rem;
+	border: 1px solid #776f54;
+	border-radius: 2rem;
+	background-color: #262018;
+	font-size: 1.4rem;
+	text-align: justify; }
 
 /* display */
 
@@ -127,6 +154,7 @@ section.main {
 .display a:hover .info p, .display a:focus .info p, .display a:active .info p {
 	background: #e1a90f; }
 
+.display .keithbaker { background-image: url("img/keithbaker.png"); }
 .display .ratcatcher { background-image: url("img/lanham.png"); }
 .display .sandersons { background-image: url("img/sandersons.png"); }
 .display .phone-call { background-image: url("img/phone-call.png"); }
@@ -136,14 +164,30 @@ section.main {
 /* footer */
 
 section.footer {
-	min-height: 66vh;
-	margin-bottom: -10vh;
-	font-size: 1.5rem;
+	min-height: 60vh;
+	font-size: 1.25rem;
 	font-family: "Martel", "Times New Roman", Times, serif;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center; }
+
+section.footer .wrap {
+	margin: 1rem auto;
+	padding: 5rem 7rem;
+	border: 1px solid #776f54;
+	border-radius: 2rem;
+	background-color: #262018;
+	font-size: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center; }
+
+section.footer .wrap a {
+	word-break: break-all; }
+
+section.footer .designer {
+	margin: 2rem auto 0;
+	text-align: center; }
 
 section.footer .divider {
 	opacity: .5;
@@ -199,24 +243,47 @@ section.footer > a {
 /* responsive/ 4:3 */
 
 @media (max-aspect-ratio: 4/3) {
+	body {
+		background-size: 12.5em; }
+
+	section.main span {
+		right: 10%;	}
+
+	.headshot {
+		bottom: 1%; }
+
 	.about {
-		width: 50%; }
+		width: 60%;
+		padding: 3rem 5rem; }
 
 	.display {
 		width: 70%; }
 
-	section.footer {
-		margin-bottom: -5vh; }
+	section.footer .wrap {
+		padding: 3rem 5rem;	}
 }
 
 /* responsive/ portrait */
 
 @media (orientation: portrait) {
+	body {
+		background-size: 20em; }
+
 	body, section.footer {
 		font-size: 1.1rem; }
 
+	.headshot {
+		right: -5%;
+		top: 10%; }
+
+	.headshot .img {
+		width: unset;
+		max-width: 70vw;
+		height: 70vh; }
+
 	.about {
 		width: 90%;
+		padding: 3rem 1.5rem;
 		font-size: 1.25rem; }
 
 	.display {
@@ -225,4 +292,7 @@ section.footer > a {
 
 	.display a .wrap {
 		padding: 5rem 2.5rem 4rem; }
+
+	section.footer .wrap {
+		padding: 5rem 3rem;	}
 }
